@@ -116,44 +116,23 @@ function criarbloco(row){
     retorno = '<div class="calendar-hours"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4 class="espacoagenda">'+row.palestra+'</h4></a></div>'  
     if(row.child!=undefined){
       retorno = '<div class="calendar-hours child"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4 class="espacoagenda">'+row.palestra+'</h4></a></div>'   
+      if(row.palestra.indexOf('Perguntas')>=0){
+        retorno = '<div class="calendar-hours child"><a href="duvidas.html" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><span class="facasuaperguntapainel">Clique aqui e faça a sua pergunta</span></em></a></div>'   
 
+      }
     }
   }else{
-    retorno = '<div class="calendar-hours"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
+    retorno = '<div class="calendar-hours"><a  href="palestrantes.html#'+row.link+'" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
     if(row.child!=undefined){
-      retorno = '<div class="calendar-hours child"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
+      retorno = '<div class="calendar-hours child"><a  href="palestrantes.html#'+row.link+'" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
 
     }
     if(String(row.palestra).indexOf('Painel')>=0){
-      retorno = '<div class="calendar-hours painel"><div class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a><a href="duvidas.html" class="facasuaperguntapainel">Faça a sua pergunta</a></div></div>'   
+      retorno = '<div class="calendar-hours painel"><a  href="palestrantes.html#'+row.link+'" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user-plus"></i>'+row.nomep+'</em></a></div>'   
     }  
   }
   return retorno
 }
-
-// jQuery(document).ready(function($){
-//   $(document.body).on('click', '.diaevento', function(){
-
-//     //mudar as cores dos botoes
-//     $('.diaevento').addClass('button-green').removeClass('button-red')
-//     $(this).addClass('button-red').removeClass('button-green')
-
-//     //exibindo conteudo dia palestra
-//     $('.conteudoscronograma').addClass('invisible')
-//     var textoclick = $(this).text()
-//     if(textoclick == 6){
-//       $('#conteudocronograma1').removeClass('invisible')
-//     }
-//     if(textoclick == 7){
-//       $('#conteudocronograma2').removeClass('invisible')
-//     }
-//     if(textoclick == 8){
-//       $('#conteudocronograma3').removeClass('invisible')
-//     }
-
-//   });
-// })
-
 
 
 
