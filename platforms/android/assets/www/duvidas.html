@@ -84,7 +84,12 @@
 <div id="page-content">
     <div id="page-content-scroll"><!--Enables this element to be scrolled -->        
         <div class="header-clear"></div>
-
+        <div class="static-notification bg-orange-dark tap-dismiss invisible" id="notificacao">
+            <p>
+                <i class="fa fa-exclamation"></i>
+                Para enviar as perguntas é necessário estar conectado a Internet! =(
+            </p>
+        </div> 
         <div class="content"> </div>
        <div class="content">
             <div class="one-half-responsive">
@@ -144,7 +149,7 @@
                                     <textarea name="contactMessageTextarea" class="contactTextarea requiredField" id="pergunta"></textarea>
                                 </div>
                                 <div class="formSubmitButtonErrorsWrap contactFormButton">
-                                    <input type="submit" class="buttonWrap button button-verde contactSubmitButton" id="contactSubmitButton" value="Enviar" data-formId="contactForm"/>
+                                    <input type="submit" class="buttonWrap button button-verde contactSubmitButton buttonsend" id="contactSubmitButton" value="Enviar" data-formId="contactForm"/>
                                 </div>
                             </fieldset>
                         </form>       

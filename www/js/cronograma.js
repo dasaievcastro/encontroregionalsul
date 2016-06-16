@@ -27,6 +27,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("online", onOnline, false);
+
+        function onOnline() {
+            download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
+            download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
+            download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
+        }
     },
     // deviceready Event Handler
     //
@@ -102,7 +109,8 @@ function readFile() {
    }
 
     function errorCallback(error) {
-      alert("Não foi possível ler o arquivo")
+      $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
+      //alert("Não foi possível ler o arquivo")
    }
     
 }
@@ -162,3 +170,53 @@ jQuery(document).ready(function($){
 
   });
 })
+
+function download(URL, Folder_Name, File_Name) {
+//step to request a file system 
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+
+    function fileSystemSuccess(fileSystem) {
+        var download_link = encodeURI(URL);
+        ext = download_link.substr(download_link.lastIndexOf('.') + 1); //Get extension of URL
+
+        var directoryEntry = fileSystem.root; // to get root path of directory
+        directoryEntry.getDirectory(Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
+        var rootdir = fileSystem.root;
+        var fp = rootdir.toURL();  // Returns Fulpath of local directory
+
+        fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
+        // download function call
+        filetransfer(download_link, fp);
+    }
+
+    function onDirectorySuccess(parent) {
+        // Directory created successfuly
+        //alert("achei")
+    }
+
+    function onDirectoryFail(error) {
+        //Error while creating directory
+        //alert("Unable to create new directory: " + error.code);
+    }
+
+    function fileSystemFail(evt) {
+        //Unable to access file system
+        //alert(evt.target.error.code);
+     }
+}
+
+function filetransfer(download_link, fp) {
+    var fileTransfer = new FileTransfer();
+    // File download function with URL and local path
+    fileTransfer.download(download_link, fp,
+            function (entry) {
+                //alert("download complete: " + entry.fullPath);
+            },
+         function (error) {
+             //Download abort errors or download failed errors
+             //alert("download error source " + error.source);
+             //alert("download error target " + error.target);
+            // alert("upload error code" + error.code);
+         }
+    );
+}

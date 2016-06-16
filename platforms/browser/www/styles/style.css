@@ -669,7 +669,6 @@
 .espacoagenda{
     margin-bottom: 45px!important;
 }
-
 .heading-title2{
     margin-left: 22px!important;
     text-align: left!important;
@@ -689,7 +688,6 @@
     background-color:#FFF; 
     z-index:999999; 
 }
-
 #status {
     position:fixed;
     z-index:999999;
@@ -704,34 +702,39 @@
     background-position:center;
     margin:-125px 0 0 -125px; 
 }
-
 #status p{
     top:60%;
 }
-
 #status em{
     font-size:10px!important;
     display:block;
     font-style:normal;
 }
+/*//////////////*/
+/*Data Preloader*/
+/*//////////////*/
 
 .textduvida{
     color: #fff;
     padding-bottom: 30px;
 }
-
 .nomep{
     color: #000!important;
+}
+.sidebar-copyright {
+    font-size: 9px!important;
 }
 .child{
     margin-left: 20px
 }
 .painel{
-    background-color: yellow;
+    background-color: rgba(46, 204, 112, 0.73);
 }
 .facasuaperguntapainel{
     text-align: right;
     margin-right: 15px;
+    color: #1f1f1f;
+        font-size: 14px;
 }
 .agendalink{
     width: 180px!important

@@ -27,6 +27,14 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("online", onOnline, false);
+
+        function onOnline() {
+            download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
+            download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
+            download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
+        }
+      
     },
     // deviceready Event Handler
     //
@@ -36,9 +44,9 @@ var app = {
         app.receivedEvent('deviceready');
         var networkState = navigator.connection.type;
         if (networkState !== Connection.NONE) {
-            download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
-            download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
-            download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
+            // download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
+            // download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
+            // download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
         }else{
             $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
         }
@@ -60,7 +68,7 @@ var app = {
 
 app.initialize();
 
- function download(URL, Folder_Name, File_Name) {
+function download(URL, Folder_Name, File_Name) {
 //step to request a file system 
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
 

@@ -15,6 +15,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.gama.ersa2"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.gama.ersa2"
         }
     },
     "dependent_plugins": {

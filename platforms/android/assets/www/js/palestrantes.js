@@ -27,6 +27,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("online", onOnline, false);
+
+        function onOnline() {
+            download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
+            download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
+            download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
+        }
     },
     // deviceready Event Handler
     //
@@ -119,7 +126,7 @@ function readFile() {
    }
 
     function errorCallback(error) {
-      alert("Não foi possível ler o arquivo")
+      $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
    }
     
 }

@@ -27,6 +27,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("online", onOnline, false);
+
+        function onOnline() {
+            download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
+            download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
+            download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
+        }
     },
     // deviceready Event Handler
     //
@@ -102,6 +109,7 @@ function readFile() {
                     });
                     $("#status").fadeOut(); // will first fade out the loading animation
                     $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+                    clickpalestrante();
                   }
                   
 
@@ -118,7 +126,7 @@ function readFile() {
    }
 
     function errorCallback(error) {
-      alert("Não foi possível ler o arquivo")
+      $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
    }
     
 }
@@ -210,6 +218,16 @@ fileTransfer.download(download_link, fp,
 
 function criarbloco(row, imagem){
 
-        return '<div class="portfolio-item"><a href="#" class="wide-title show-wide-text"><h3 class="nomep">'+row.nome+'</h3><em class="nomep">'+row.palestra+'</em><div></div><img src="images/pictures/fundo.jpg" alt="img"></a><div class="wide-text"><p><img src="'+imagem+'" alt="img">'+row.texto+'</p><a href="#" class="portfolio-close"><i class="fa fa-times"></i>Fechar</a><div class="clear"></div></div></div>'
+        return '<div id="'+row.id+'" class="portfolio-item"><a href="#" class="wide-title show-wide-text"><h3 class="nomep">'+row.nome+'</h3><em class="nomep">'+row.palestra+'</em><div></div><img src="images/pictures/fundo.jpg" alt="img"></a><div class="wide-text"><p><img src="'+imagem+'" alt="img">'+row.texto+'</p><a href="#" class="portfolio-close"><i class="fa fa-times"></i>Fechar</a><div class="clear"></div></div></div>'
    
+}
+function clickpalestrante(){
+  url = document.URL;
+  if(url.indexOf('#')>=0){
+    id = url.split("#")[1];
+    $('#'+id+' .show-wide-text').delay(2000).trigger('click');
+      $('#page-content-scroll').animate({
+        scrollTop: $("#"+id).offset().top-60
+    }, 2000);
+  }
 }

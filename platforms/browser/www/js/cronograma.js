@@ -27,6 +27,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("online", onOnline, false);
+
+        function onOnline() {
+            download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
+            download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
+            download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
+        }
     },
     // deviceready Event Handler
     //
@@ -102,7 +109,8 @@ function readFile() {
    }
 
     function errorCallback(error) {
-      alert("Não foi possível ler o arquivo")
+      $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
+      //alert("Não foi possível ler o arquivo")
    }
     
 }
@@ -116,44 +124,23 @@ function criarbloco(row){
     retorno = '<div class="calendar-hours"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4 class="espacoagenda">'+row.palestra+'</h4></a></div>'  
     if(row.child!=undefined){
       retorno = '<div class="calendar-hours child"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4 class="espacoagenda">'+row.palestra+'</h4></a></div>'   
+      if(row.palestra.indexOf('Perguntas')>=0){
+        retorno = '<div class="calendar-hours child"><a href="duvidas.html" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><span class="facasuaperguntapainel">Clique aqui e faça a sua pergunta</span></em></a></div>'   
 
+      }
     }
   }else{
-    retorno = '<div class="calendar-hours"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
+    retorno = '<div class="calendar-hours"><a  href="palestrantes.html#'+row.link+'" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
     if(row.child!=undefined){
-      retorno = '<div class="calendar-hours child"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
+      retorno = '<div class="calendar-hours child"><a  href="palestrantes.html#'+row.link+'" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a></div>'   
 
     }
     if(String(row.palestra).indexOf('Painel')>=0){
-      retorno = '<div class="calendar-hours painel"><div class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user"></i>'+row.nomep+'</em></a><a href="duvidas.html" class="facasuaperguntapainel">Faça a sua pergunta</a></div></div>'   
+      retorno = '<div class="calendar-hours painel"><a  href="palestrantes.html#'+row.link+'" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-user-plus"></i>'+row.nomep+'</em></a></div>'   
     }  
   }
   return retorno
 }
-
-// jQuery(document).ready(function($){
-//   $(document.body).on('click', '.diaevento', function(){
-
-//     //mudar as cores dos botoes
-//     $('.diaevento').addClass('button-green').removeClass('button-red')
-//     $(this).addClass('button-red').removeClass('button-green')
-
-//     //exibindo conteudo dia palestra
-//     $('.conteudoscronograma').addClass('invisible')
-//     var textoclick = $(this).text()
-//     if(textoclick == 6){
-//       $('#conteudocronograma1').removeClass('invisible')
-//     }
-//     if(textoclick == 7){
-//       $('#conteudocronograma2').removeClass('invisible')
-//     }
-//     if(textoclick == 8){
-//       $('#conteudocronograma3').removeClass('invisible')
-//     }
-
-//   });
-// })
-
 
 
 
@@ -183,3 +170,53 @@ jQuery(document).ready(function($){
 
   });
 })
+
+function download(URL, Folder_Name, File_Name) {
+//step to request a file system 
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+
+    function fileSystemSuccess(fileSystem) {
+        var download_link = encodeURI(URL);
+        ext = download_link.substr(download_link.lastIndexOf('.') + 1); //Get extension of URL
+
+        var directoryEntry = fileSystem.root; // to get root path of directory
+        directoryEntry.getDirectory(Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
+        var rootdir = fileSystem.root;
+        var fp = rootdir.toURL();  // Returns Fulpath of local directory
+
+        fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
+        // download function call
+        filetransfer(download_link, fp);
+    }
+
+    function onDirectorySuccess(parent) {
+        // Directory created successfuly
+        //alert("achei")
+    }
+
+    function onDirectoryFail(error) {
+        //Error while creating directory
+        //alert("Unable to create new directory: " + error.code);
+    }
+
+    function fileSystemFail(evt) {
+        //Unable to access file system
+        //alert(evt.target.error.code);
+     }
+}
+
+function filetransfer(download_link, fp) {
+    var fileTransfer = new FileTransfer();
+    // File download function with URL and local path
+    fileTransfer.download(download_link, fp,
+            function (entry) {
+                //alert("download complete: " + entry.fullPath);
+            },
+         function (error) {
+             //Download abort errors or download failed errors
+             //alert("download error source " + error.source);
+             //alert("download error target " + error.target);
+            // alert("upload error code" + error.code);
+         }
+    );
+}
