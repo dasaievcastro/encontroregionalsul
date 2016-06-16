@@ -68,7 +68,7 @@ var app = {
 
 app.initialize();
 
-function download(URL, Folder_Name, File_Name) {
+ function download(URL, Folder_Name, File_Name) {
 //step to request a file system 
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
 
