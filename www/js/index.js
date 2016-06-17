@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        alert("sdf");
     },
     // Bind Event Listeners
     //
