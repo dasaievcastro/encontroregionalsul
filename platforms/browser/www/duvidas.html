@@ -57,7 +57,7 @@
             </a>            
             <a class="menu-item border-menu-amarelo" href="cronograma.html">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                Cronograma
+                Programação
             </a> 
             <a class="menu-item border-menu-vermelho" href="palestrantes.html">
                 <i class="fa fa-users" aria-hidden="true"></i>
@@ -82,7 +82,7 @@
 </div> 
 
 <div id="page-content">
-    <div id="page-content-scroll"><!--Enables this element to be scrolled -->        
+    <div id="page-content-scroll">      
         <div class="header-clear"></div>
         <div class="static-notification bg-orange-dark tap-dismiss invisible" id="notificacao">
             <p>
@@ -131,6 +131,10 @@
                                     <label class="field-title contactEmailField" for="contactEmailField">Email: <span>(obrigatório)</span></label>
                                     <input type="text" name="contactEmailField" value="" class="contactField requiredField requiredEmailField" id="email"/>
                                 </div>
+                                <div class="formFieldWrap">
+                                    <label class="field-title contactEmailField" for="contactEmailField">Pergunte Para</span></label>
+                                    <input type="text" name="pergunte" value="" class="contactField requiredEmailField" id="pergunte"/>
+                                </div>
                                  <div class="formFieldWrap">
                                     <label class="field-title contactEmailField" for="painel">Painel: </label>
                                     <select name="painel" class="contactField" id="painel">
@@ -149,7 +153,7 @@
                                     <textarea name="contactMessageTextarea" class="contactTextarea requiredField" id="pergunta"></textarea>
                                 </div>
                                 <div class="formSubmitButtonErrorsWrap contactFormButton">
-                                    <input type="submit" class="buttonWrap button button-verde contactSubmitButton buttonsend" id="contactSubmitButton" value="Enviar" data-formId="contactForm"/>
+                                    <input type="submit" class="buttonWrap button button-verde contactSubmitButton" id="contactSubmitButton" value="Enviar" data-formId="contactForm"/>
                                 </div>
                             </fieldset>
                         </form>       

@@ -35,6 +35,7 @@ var app = {
             download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
         }
     },
+
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
@@ -110,7 +111,6 @@ function readFile() {
 
     function errorCallback(error) {
       $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
-      //alert("Não foi possível ler o arquivo")
    }
     
 }
@@ -125,7 +125,7 @@ function criarbloco(row){
     if(row.child!=undefined){
       retorno = '<div class="calendar-hours child"><a class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4 class="espacoagenda">'+row.palestra+'</h4></a></div>'   
       if(row.palestra.indexOf('Perguntas')>=0){
-        retorno = '<div class="calendar-hours child"><a href="duvidas.html" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><span class="facasuaperguntapainel">Clique aqui e faça a sua pergunta</span></em></a></div>'   
+        retorno = '<div class="calendar-hours child"><a href="duvidas.html" class="calendar-hour calendar-hour-taken"><strong class="cal-from">'+row.horarioi+'</strong><strong class="cal-to">'+row.horariof+'</strong><h4>'+row.palestra+'</h4><em><i class="fa fa-hand-pointer-o"></i><span class="facasuaperguntapainel">Clique aqui e faça a sua pergunta</span></em></a></div>'   
 
       }
     }

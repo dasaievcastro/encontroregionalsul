@@ -88,10 +88,4 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 (function($){
      /*Toggle Classes Licensed to be used by Enabled only, only in items purcahsed from ThemeForest.net */
     $.fn.toggle2classes=function(s,a){return s&&a?this.each(function(){var t=$(this);t.hasClass(s)||t.hasClass(a)?t.toggleClass(s+" "+a):t.addClass(s)}):this};
-}(jQuery));
-           
-
-
-
-
-    
+}(jQuery));   
