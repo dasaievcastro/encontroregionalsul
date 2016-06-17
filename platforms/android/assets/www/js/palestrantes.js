@@ -161,7 +161,7 @@ function readImage(arquivo,retorno){
       if (networkState !== Connection.NONE) {
         download(url,"imagens",arquivo)
       }
-      retorno("images/pictures/1.jpg")
+      retorno("images/pictures/iconpalestrante.png")
     }
 
 }
