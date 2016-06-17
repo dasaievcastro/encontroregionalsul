@@ -16,33 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+
     // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-        alert("sdf");
-    },
+    function initialize() {
+        bindEvents();
+    }
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    function bindEvents() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("online", onOnline, false);
-        alert("sdfa");
         function onOnline() {
             download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
             download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
             download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
         }
       
-    },
+    }
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+    function onDeviceReady() {
+        receivedEvent('deviceready');
         var networkState = navigator.connection.type;
         if (networkState !== Connection.NONE) {
             // download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
@@ -51,9 +49,9 @@ var app = {
         }else{
             $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
         }
-    },
+    }
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    function receivedEvent:(id) {
         // var parentElement = document.getElementById(id);
         // var listeningElement = parentElement.querySelector('.listening');
         // var receivedElement = parentElement.querySelector('.received');
@@ -65,9 +63,8 @@ var app = {
             $("#status").fadeOut(); // will first fade out the loading animation
             $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
     }
-};
-alert("sdfbb");
-app.initialize();
+
+initialize();
 
  function download(URL, Folder_Name, File_Name) {
 //step to request a file system 
