@@ -29,7 +29,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("online", onOnline, false);
-
+        alert("sdfa");
         function onOnline() {
             download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
             download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
@@ -66,7 +66,7 @@ var app = {
             $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
     }
 };
-
+alert("sdfbb");
 app.initialize();
 
  function download(URL, Folder_Name, File_Name) {
