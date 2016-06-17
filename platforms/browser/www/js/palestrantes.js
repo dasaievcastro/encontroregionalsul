@@ -127,6 +127,8 @@ function readFile() {
 
     function errorCallback(error) {
       $('#notificacao').delay(450).fadeIn("medium").delay(3500).fadeOut("slow")
+      $("#status").fadeOut(); // will first fade out the loading animation
+                    $("#preloader").delay(350).fadeOut("slow");
    }
     
 }
