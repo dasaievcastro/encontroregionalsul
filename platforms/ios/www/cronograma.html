@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src data: gap: 'self' 'unsafe-inline' http://gama-ca.com.br/*; img-src data: 'self'; style-src 'self' 'unsafe-inline';  media-src *">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="icon" type="image/png" href="images/splash/android-chrome-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" sizes="196x196" href="images/splash/apple-touch-icon-196x196.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/splash/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/splash/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/splash/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/splash/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/splash/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/splash/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/splash/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/splash/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="57x57" href="images/splash/apple-touch-icon-57x57.png">
+<link rel="icon" type="image/png" href="images/splash/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="images/splash/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/splash/favicon-16x16.png" sizes="16x16">
+<link rel="shortcut icon" href="images/splash/favicon.ico" type="image/x-icon" />
+    
+<title>VII Encontro de Previdência Complementar</title>
+
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/menu.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/cronograma.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</head>
+
+<body>
+<div class="gallery-fix"></div>
+<div class="sidebar-tap-close"></div>
+    
+ <div class="header-fixed header-light">
+    <a href="#" class="header-icon-1 open-left-sidebar"><i class="fa fa-navicon"></i> Menu</a>
+    <a href="index.html" class="header-logo"></a>
+</div>
+        
+<div class="sidebar-left sidebar-light">
+    <div class="sidebar-scroll">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-logo"></a>
+        </div>        
+        <div class="sidebar-menu"> 
+            <a class="menu-item border-menu-verde" href="index.html">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Home 
+            </a>            
+            <a class="menu-item border-menu-amarelo" href="cronograma.html">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                Programação
+            </a> 
+            <a class="menu-item border-menu-vermelho" href="palestrantes.html">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Palestrantes
+            </a> 
+            <a class="menu-item border-menu-verde" href="duvidas.html">
+                <i class="fa fa-question" aria-hidden="true"></i>
+                Pergunte ao palestrante
+            </a>  
+            <a class="menu-item border-menu-amarelo" href="maisinformacoes.html">
+                <i class="fa fa-link" aria-hidden="true"></i>
+                Informações
+            </a>             
+            <a class="close-sidebar menu-item border-menu-vermelho" href="#">
+                <i class="fa fa-times"></i>
+                Fechar Menu
+            </a>
+        </div>    
+            <em class=" sidebar-logo-footer" href="maisinformacoes.html"></em>
+            <em class="sidebar-copyright">Copyright 2016. Todos os Direitos Reservados</em>
+    </div>
+</div> 
+          
+<div id="page-content">
+    <div id="page-content-scroll">   
+        <div class="header-clear"></div>
+        <div class="static-notification bg-orange-dark tap-dismiss invisible" id="notificacao">
+            <p>
+                <i class="fa fa-exclamation"></i>
+                Não foi possível ler as informações!
+            </p>
+        </div> 
+        <div class="content-strip">
+            <div class="strip-content">
+                <h4>Programação</h4>
+                <i class="fa fa-calendar"></i>
+            </div>
+            <div class=""></div>
+            <img class="preload-image" data-original="images/pictures/cronograma-4.jpg" alt="img">
+        </div>
+        <div class="container heading-style">
+            <h4 class="heading-title2">Selecione o dia do evento:</h4>
+        </div>
+        <div class="content-fullscreen">
+            <div class="content">
+                <div class="container no-bottom">   
+                    <div class="one-third-responsive">
+                        <a href="#" class="button button-verde button-round diaevento botao6"><b>6</b></a>
+                        <a href="#" class="button button-grey button-round diaevento botao7"><b>7</b></a>
+                        <a href="#" class="button button-grey button-round diaevento botao8"><b>8</b></a>
+                    </div>
+                </div>
+            </div>
+            <div class="one-half-responsive last-column conteudoscronograma" id="conteudocronograma1">      
+                
+            </div>
+            <div class="one-half-responsive last-column invisible conteudoscronograma" id="conteudocronograma2">      
+                
+            </div>
+            <div class="one-half-responsive last-column invisible conteudoscronograma" id="conteudocronograma3">      
+                
+            </div>
+        </div>
+
+        <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Voltar</a>
+    </div>
+</div>
+ 
+<div id="preloader">
+    <div id="status">
+        <p class="center-text">
+            Carregando conteúdo...
+            <em></em>
+        </p>
+    </div>
+</div>
+
+</body>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: ws: 'unsafe-inline' http://gama-ca.com.br/*; img-src data: 'self'; style-src 'self' 'unsafe-inline';  media-src *">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="icon" type="image/png" href="images/splash/android-chrome-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" sizes="196x196" href="images/splash/apple-touch-icon-196x196.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/splash/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/splash/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/splash/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/splash/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/splash/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/splash/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/splash/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/splash/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="57x57" href="images/splash/apple-touch-icon-57x57.png">
+<link rel="icon" type="image/png" href="images/splash/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="images/splash/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/splash/favicon-16x16.png" sizes="16x16">
+<link rel="shortcut icon" href="images/splash/favicon.ico" type="image/x-icon" />
+    
+<title>VII Encontro de Previdência Complementar</title>
+
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/menu.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</head>
+
+<body>
+<div class="gallery-fix"></div><!-- Fix Gallery next/prev error on Android -->
+<div class="sidebar-tap-close"></div><!-- Overlay for content to close Sidebar -->
+    
+<div class="header-fixed header-light">
+    <a href="#" class="header-icon-1 open-left-sidebar"><i class="fa fa-navicon"></i></a>
+    <a href="index.html" class="header-logo"></a>
+</div>  
+
+<div class="sidebar-left sidebar-light">
+    <div class="sidebar-scroll">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-logo"></a>
+        </div>        
+        <div class="sidebar-menu"> 
+            <a class="menu-item border-menu-verde" href="index.html">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Home 
+            </a>
+            <a class="menu-item border-menu-amarelo" href="cronograma.html">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                Programação
+            </a> 
+            <a class="menu-item border-menu-vermelho" href="palestrantes.html">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Palestrantes
+            </a> 
+            <a class="menu-item border-menu-verde" href="duvidas.html">
+                <i class="fa fa-question" aria-hidden="true"></i>
+                Pergunte
+            </a>
+            <a class="menu-item border-menu-amarelo" href="maisinformacoes.html">
+                <i class="fa fa-link" aria-hidden="true"></i>
+                Sobre
+            </a>               
+            <a class="close-sidebar menu-item border-menu-vermelho" href="#">
+                <i class="fa fa-times"></i>
+                Fechar Menu
+            </a>
+        </div>    
+        <em class="sidebar-copyright">Copyright 2016. Todos os Direitos Reservados</em>
+    </div>
+</div> 
+            
+<div id="page-content">
+    <div id="page-content-scroll"><!--Enables this element to be scrolled -->        
+        <div class="header-clear"></div>
+        <div class="static-notification bg-orange-dark tap-dismiss invisible" id="notificacao">
+            <p>
+                <i class="fa fa-exclamation"></i>
+                Você está sem acesso a Internet! =(
+            </p>
+        </div> 
+        <div class="content-fullscreen full-bottom">
+            <div class="portfolio-wide">
+               <div class="portfolio-item">
+                    <a href="cronograma.html" class="button button-green button-fullscreen uppercase ultrabold itemhome">Cronograma</a>
+                    <a href="palestrantes.html" class="button button-green button-fullscreen uppercase ultrabold itemhome">Palestrantes</a>
+                    <a href="duvidas.html" class="button button-green button-fullscreen uppercase ultrabold itemhome">Pergunte</a>
+                    <a href="maisinformacoes.html" class="button button-green button-fullscreen uppercase ultrabold itemhome">Sobre</a>
+                </div> 
+            </div>                 
+        </div>     
+    </div>
+    <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Voltar</a>
+</div>
+
+<div id="preloader">
+    <div id="status">
+        <p class="center-text">
+            Caregando conteúdo...
+            <em></em>
+        </p>
+    </div>
+</div>
+
+</body>
