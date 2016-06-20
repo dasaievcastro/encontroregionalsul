@@ -29,9 +29,9 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("online", onOnline, false);
         function onOnline() {
-            download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
-            download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
-            download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
+            // download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
+            // download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
+            // download("http://gama-ca.com.br/appsulatuarios/data/maisinformacoes.json", "data", "maisinformacoes");
         }
       
     },
