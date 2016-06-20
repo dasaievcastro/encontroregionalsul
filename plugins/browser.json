@@ -21,6 +21,9 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.gama.ersa2"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.gama.ersa2"
         }
     },
     "dependent_plugins": {
