@@ -28,6 +28,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("online", onOnline, false);
+
         function onOnline() {
             download("http://gama-ca.com.br/appsulatuarios/data/palestrantes.json", "data", "palestrantes");
             download("http://gama-ca.com.br/appsulatuarios/data/cronograma.json", "data", "cronograma");
@@ -62,6 +63,10 @@ var app = {
         // console.log('Received Event: ' + id);
             $("#status").fadeOut(); // will first fade out the loading animation
             $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+            var height = document.height;
+            if(height<980){
+                $('.homepage-cover p').css('font-size','13px');
+            }
     }
 };
 app.initialize();
