@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' gap: http://gama-ca.com.br/* https://maps.google.com/ https://www.google.com/ http://*.google.com/* https://*.google.com/*; img-src data: 'self'; style-src 'self' 'unsafe-inline';  media-src *">
+<meta http-equiv="Content-Security-Policy" content="default-src data: ws: 'self' 'unsafe-inline' http://gama-ca.com.br/*; img-src data: 'self'; style-src 'self' 'unsafe-inline';  media-src *">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" href="images/splash/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="images/splash/favicon-16x16.png" sizes="16x16">
 <link rel="shortcut icon" href="images/splash/favicon.ico" type="image/x-icon" />
-
+    
 <title>VII Encontro de Previdência Complementar</title>
 
 <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -32,13 +32,13 @@
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/plugins.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/maisinformacoes.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
 </head>
 
-<body>
-<div class="gallery-fix"></div><!-- Fix Gallery next/prev error on Android -->
-<div class="sidebar-tap-close"></div><!-- Overlay for content to close Sidebar -->
+<body class="has-cover">
+<div class="gallery-fix"></div>
+<div class="sidebar-tap-close"></div>
     
  <div class="header-fixed header-light">
     <a href="#" class="header-icon-1 open-left-sidebar"><i class="fa fa-navicon"></i> Menu</a>
@@ -75,61 +75,36 @@
                 <i class="fa fa-times"></i>
                 Fechar Menu
             </a>
-        </div>    
+        </div>
             <em class=" sidebar-logo-footer" href="maisinformacoes.html"></em>
             <em class="sidebar-copyright">Copyright 2016. Todos os Direitos Reservados</em>
     </div>
-</div> 
+</div>    
             
 <div id="page-content">
-    <div id="page-content-scroll">      
-       <div class="header-clear"></div>
-       <div class="content-fullscreen" id="mapainformacoes">                
-            <iframe class="responsive-image maps" src="https://maps.google.com/?ie=UTF8&amp;ll=-25.427179, -49.308097&amp;spn=0.006186,0.016512&amp;t=h&amp;z=17&amp;output=embed"></iframe>'    
-       </div>
-       <div class="content">
-            <div class="one-half-responsive">
-                <div class="container heading-style">
-                    <h4 class="heading-title">Localização</h4>
-                    <i class="fa fa-map-marker heading-icon"></i>
-                    <div class="line bg-black"></div>
-                </div>
+    <div id="page-content-scroll"><!--Enables this element to be scrolled -->        
+        <div class="static-notification bg-orange-dark tap-dismiss invisible" style="margin-top:60px" id="notificacao">
+            <p>
+                <i class="fa fa-exclamation"></i>
+                Não foi possível baixar as atualizações! =(
+            </p>
+        </div> 
+        <div class="coverpage-slider homepage-coverpage-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide cover-slide cover-screen" style="background-image:url(images/pictures/tela-principal.jpg);">
+                    <div class="homepage-cover">
+                        <h4>VII ENCONTRO DE <strong class="color-green-dark">PREVIDÊNCIA COMPLEMENTAR</strong></h4>
+                        <p>
+                            Em sua sétima edição, o Encontro de Previdência Complementar da Região Sul já se tornou um evento referência para o sistema, fazendo parte do calendário da ABRAPP e atraindo profissionais e dirigentes, não só da região sul, mas também de outros estados brasileiros.
+                        </p>
+                        <div class="strip-button"><a href="cronograma.html" class="scale-hover agendalink">Confira a nossa agenda</a></div>
+                    </div>
+                </div>    
             </div>
-            <div class="hide-if-responsive"></div>
-            <div class="one-half-responsive last-column">
-                <div class="container no-bottom">
-                    <p>
-                        <a class="contact-text"><strong>Local: </strong>Salão de Atos do Parque Barigui</a>
-                        <a class="contact-text"><strong>Endereço: </strong>Parque Barigui - Alameda Ecológica Burle Marx,
-s/n - Santo Inácio, Curitiba-PR</a>
-                        <a class="contact-text">Sala 1001 - Curitiba - Paraná</a>
-                        <a class="contact-text"><strong>CEP: </strong>80.710-570</a>
-                    </p>
-                </div>            
-            </div>
-            <div class="one-half-responsive">
-                <div class="container heading-style">
-                    <h4 class="heading-title">Informações Úteis</h4>
-                    <i class="fa fa-envelope-o heading-icon"></i>
-                    <div class="line bg-black"></div>
-                </div>
-            </div>
-            <div class="hide-if-responsive"></div>
-            <div class="one-half-responsive last-column">
-                <div class="container no-bottom">
-                    <p>
-                        <a class="contact-text"><strong>PREVIPAR</strong></a>
-                        <a class="contact-text"><strong>Endereço: </strong>Rua Conselheiro Laurindo, 502</a>
-                        <a class="contact-text">Sala 1001 - Curitiba - Paraná</a>
-                        <a class="contact-text"><strong>CEP: </strong>41. 3039-2277</a>
-                    </p>
-                </div>            
-            </div>
-        </div>
-        <div class="footer-clear disabled"></div>
-    </div>
+        </div> 
     
     <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Voltar</a>
+</div>
 </div>
 
 <div id="preloader" class="invisible">
@@ -140,5 +115,4 @@ s/n - Santo Inácio, Curitiba-PR</a>
         </p>
     </div>
 </div>
-    
 </body>
