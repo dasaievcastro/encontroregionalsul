@@ -733,8 +733,9 @@
 .facasuaperguntapainel{
     text-align: right;
     margin-right: 15px;
-    color: #1f1f1f;
+    color: #ED1B24;
     font-size: 12px;
+    font-weight: bold;
 }
 .agendalink{
     width: 180px!important

@@ -235,8 +235,8 @@
 .sidebar-light .submenu,
 .sidebar-light .submenu .menu-item{background-color:#ecf0f1!important;}
 .sidebar-light .sidebar-logo{background-image:url(../images/logo3.png);}
-.sidebar-light .sidebar-logo-footer{background-image:url(../images/logo-mercer-gama.png);}
-.sidebar-light .menu-item{color:#7d8185; background-color:none; font-weight:500}
+/*.sidebar-light .sidebar-logo-footer{background-image:url(../images/logo-mercer-gama.png);}
+*/.sidebar-light .menu-item{color:#7d8185; background-color:none; font-weight:500}
 .sidebar-light .menu-item:hover{color:#000000!important; background-color:rgba(0,0,0,0.05)!important;}
 .sidebar-light .menu-item i:first-child{color:rgba(0,0,0,0.7);}
 .sidebar-light .menu-item .fa-angle-right{color:#505d6c;}
@@ -251,8 +251,8 @@
 .sidebar-light .sidebar-contact{background-color:#e7ebec; padding-bottom:30px;}
 
 .sidebar-header{
-    padding-top:30px;
-    padding-bottom:30px;
+    padding-top:5px;
+    padding-bottom:10px;
 }
 
 .no-sidebar-border *{
@@ -895,10 +895,18 @@
     height:20px;
     background-size: 165px 16px;
     margin-top: 24px!important;
+    margin-left: 45px;
     z-index: 9999!important;
     position: absolute!important;
     background-position: 43px!important;
     background-color: none!important;
+}
+
+.logo-footer{
+    width:250px;
+    height:20px;
+    margin-top: 24px!important;
+    margin-left: 40px;
 }
 
 .submenu .sidebar-logo-footer{
@@ -910,8 +918,8 @@
 
 .sidebar-copyright {
     padding-bottom: 30px!important;
-    padding-top: 44px!important;
-    padding-left: 26px!important;
+    padding-top: 20px!important;
+    padding-left: 25px!important;
     position: absolute!important;
     z-index: 9999!important;
 }
