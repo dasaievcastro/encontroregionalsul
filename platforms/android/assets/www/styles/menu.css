@@ -903,10 +903,10 @@
 }
 
 .logo-footer{
-    width:250px;
-    height:20px;
-    margin-top: 24px!important;
-    margin-left: 43px;
+    width: 250px;
+    height: 20px;
+    margin-top: 10px!important;
+    margin-left: 12px;
 }
 
 .submenu .sidebar-logo-footer{
@@ -914,12 +914,4 @@
     height:90px;
     background-position:20px!important;
     width:100%!important;
-}
-
-.sidebar-copyright {
-    padding-bottom: 30px!important;
-    padding-top: 20px!important;
-    padding-left: 25px!important;
-    position: absolute!important;
-    z-index: 9999!important;
 }
