@@ -82,18 +82,20 @@ function readFile() {
                //var txtArea = document.getElementById('textarea');
                var a = JSON.parse(this.result);
                r = 0;
+               var html="";
                //for(r in a){
                 function recursive(r){
                 var row = a[r];
 
                 readImage(row.foto,function(resposta){
 
-                  html = criarbloco(row, resposta)
+                  html += criarbloco(row, resposta)
                   r++;
-                  $('#conteudopalestrantes').append(html)
+                  
                   if(r<a.length){
                     recursive(r)
-                  }else{http://192.168.201.39:3000/palestrantes.html#
+                  }else{
+                    $('#conteudopalestrantes').append(html)
                      $(".preload-image").lazyload({
                         threshold : 100,
                         effect : "fadeIn",
